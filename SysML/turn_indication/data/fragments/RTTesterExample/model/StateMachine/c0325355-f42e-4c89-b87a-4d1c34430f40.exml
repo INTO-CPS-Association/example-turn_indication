@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="FLASHING" version="4">
+  <OBJECT>
+    <ID name="FLASHING" mc="Standard.StateMachine" uid="c0325355-f42e-4c89-b87a-4d1c34430f40"/>
+    <PID name="OUTPUT_CTRL" mc="Standard.Class" uid="13a0f2b6-443a-4815-8735-8d8d23ccc2ad"/>
+    <ATTRIBUTES>
+      <ATT name="Kind">Dynamic</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[FLASHING]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Top">
+        <OBJECT>
+          <ID name="FLASHING" mc="Standard.Region" uid="26ff99fe-90dd-465e-b03b-b1ffde4689ff"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[FLASHING]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Sub">
+              <OBJECT>
+                <ID name="initial" mc="Standard.InitialPseudoState" uid="fd268694-06b4-4189-8aad-51d253e5a0df"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[initial]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="d7092d94-2ece-4d2c-a29b-ce9cc3b4750d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="ON" mc="Standard.State" uid="b7b962f1-af4e-4afa-b9db-0686302567a5"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ON" mc="Standard.State" uid="b7b962f1-af4e-4afa-b9db-0686302567a5"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ON]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Internal">
+                    <OBJECT>
+                      <ID name="" mc="Standard.InternalTransition" uid="bc794846-f5ab-4145-9a46-8ae03a63c1e3"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[t.reset();]]></ATT>
+                        <ATT name="ReceivedEvents"><![CDATA[Entry]]></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="0871a97c-d4e3-48c1-ba46-5d57ccbf097d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"><![CDATA[t.elapsed(340)]]></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="OFF" mc="Standard.State" uid="d15c232c-6482-4d6e-b3e8-ab9b727041c6"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="OFF" mc="Standard.State" uid="d15c232c-6482-4d6e-b3e8-ab9b727041c6"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[OFF]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Internal">
+                    <OBJECT>
+                      <ID name="" mc="Standard.InternalTransition" uid="69f4b9cc-bdd0-4c45-bc74-7ed323f9a9f7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[t.reset();
+LampsLeft = 0;
+LampsRight = 0;
+ctr = ctr + 1;]]></ATT>
+                        <ATT name="ReceivedEvents"><![CDATA[Entry]]></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="6afdf058-c233-48e9-a593-ebbe39bd9d8a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[LampsLeft = lOld;
+LampsRight = rOld;]]></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"><![CDATA[t.elapsed(320)]]></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="ON" mc="Standard.State" uid="b7b962f1-af4e-4afa-b9db-0686302567a5"/>
+                          </REFOBJ>
+                        </LINK>
+                        <LINK relation="Extension">
+                          <FOREIGNID name="RequirementRelated" mc="Standard.Stereotype" uid="55b2731f-a90d-11df-a01f-001302895b2b"/>
+                        </LINK>
+                        <COMP relation="DependsOnDependency">
+                          <OBJECT>
+                            <ID name="" mc="Standard.Abstraction" uid="38315e6d-c7fa-403f-901d-9188ac9b4f8a"/>
+                            <ATTRIBUTES>
+                              <ATT name="Mapping"></ATT>
+                              <ATT name="DependsOnId"></ATT>
+                              <ATT name="DependsOnName"></ATT>
+                              <ATT name="Name"></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES>
+                              <LINK relation="DependsOn">
+                                <ID name="REQ-002" mc="Standard.Requirement" uid="3fa5874f-c73b-4427-b18c-76d69f97e9ca"/>
+                              </LINK>
+                              <LINK relation="Extension">
+                                <FOREIGNID name="satisfy" mc="Standard.Stereotype" uid="01ec12fc-0000-0224-0000-000000000000"/>
+                              </LINK>
+                            </DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <COMP relation="Descriptor">
+                          <OBJECT>
+                            <ID name="" mc="Standard.Note" uid="7c442704-ac3b-49ba-8cd3-5cf50cbceba6"/>
+                            <ATTRIBUTES>
+                              <ATT name="Content"><![CDATA[transition OFF -> ON
+in state diagram FLASHING]]></ATT>
+                              <ATT name="MimeType"></ATT>
+                              <ATT name="Name"></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES>
+                              <LINK relation="Model">
+                                <FOREIGNID name="comment" mc="Standard.NoteType" uid="00000000-0000-3e80-0000-000000000000"/>
+                              </LINK>
+                            </DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="RequirementRelated" mc="Standard.Stereotype" uid="55b2731f-a90d-11df-a01f-001302895b2b"/>
+                  </LINK>
+                  <COMP relation="DependsOnDependency">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Abstraction" uid="4f5403c5-b576-4a3f-83ff-5cb43d62b0bf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Mapping"></ATT>
+                        <ATT name="DependsOnId"></ATT>
+                        <ATT name="DependsOnName"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="DependsOn">
+                          <ID name="REQ-002" mc="Standard.Requirement" uid="3fa5874f-c73b-4427-b18c-76d69f97e9ca"/>
+                        </LINK>
+                        <LINK relation="Extension">
+                          <FOREIGNID name="satisfy" mc="Standard.Stereotype" uid="01ec12fc-0000-0224-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="FLASHING State Machine diagram" mc="Standard.StateMachineDiagram" uid="eda801fa-e142-4867-8acc-81b9fe70b0a8"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

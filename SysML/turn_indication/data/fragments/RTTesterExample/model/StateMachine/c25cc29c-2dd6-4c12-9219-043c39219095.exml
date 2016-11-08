@@ -1,0 +1,267 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="EMER_ON" version="4">
+  <OBJECT>
+    <ID name="EMER_ON" mc="Standard.StateMachine" uid="c25cc29c-2dd6-4c12-9219-043c39219095"/>
+    <PID name="FLASH_CTRL" mc="Standard.Class" uid="a504f8e1-844a-42ee-85e2-a0a967f9f3f9"/>
+    <ATTRIBUTES>
+      <ATT name="Kind">Dynamic</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[EMER_ON]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Top">
+        <OBJECT>
+          <ID name="EMER_ON" mc="Standard.Region" uid="aa3a5deb-37b8-441d-8b82-e2b38d8faea1"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[EMER_ON]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Sub">
+              <OBJECT>
+                <ID name="initial" mc="Standard.InitialPseudoState" uid="6272c40d-918d-4bf2-a4f7-dd0406b08a9f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[initial]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="95781620-ea71-40b0-9bfe-20585144817d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="EMER_ACTIVE" mc="Standard.State" uid="c098096d-4daf-41a8-b205-9af819545441"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="EMER_ACTIVE" mc="Standard.State" uid="c098096d-4daf-41a8-b205-9af819545441"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[EMER_ACTIVE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Internal">
+                    <OBJECT>
+                      <ID name="" mc="Standard.InternalTransition" uid="f6dc7df0-c6e6-4be4-80d2-b488fe1b2a86"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[left = 1;
+right = 1;
+tilOld = TurnIndLvr;]]></ATT>
+                        <ATT name="ReceivedEvents"><![CDATA[Entry]]></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="67b4b578-85c2-4a08-b3a4-a4ad12c00b3e"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"><![CDATA[TurnIndLvr > 0 && tilOld != TurnIndLvr]]></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="TURN_IND_OVERRIDE" mc="Standard.State" uid="3ad71d8b-27fb-4462-8ba7-28a0c8f19a62"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="f9c38473-016d-41f6-95c8-a5b5d570c59d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"><![CDATA[TurnIndLvr == 0 && tilOld != TurnIndLvr]]></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="EMER_ACTIVE" mc="Standard.State" uid="c098096d-4daf-41a8-b205-9af819545441"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="RequirementRelated" mc="Standard.Stereotype" uid="55b2731f-a90d-11df-a01f-001302895b2b"/>
+                  </LINK>
+                  <COMP relation="DependsOnDependency">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Abstraction" uid="17aa7a05-79cf-4d9d-99f9-e1e2bd518e01"/>
+                      <ATTRIBUTES>
+                        <ATT name="Mapping"></ATT>
+                        <ATT name="DependsOnId"></ATT>
+                        <ATT name="DependsOnName"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="DependsOn">
+                          <ID name="REQ-005" mc="Standard.Requirement" uid="823b7681-1a66-4617-9d51-ec6f7e6508cd"/>
+                        </LINK>
+                        <LINK relation="Extension">
+                          <FOREIGNID name="satisfy" mc="Standard.Stereotype" uid="01ec12fc-0000-0224-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="TURN_IND_OVERRIDE" mc="Standard.State" uid="3ad71d8b-27fb-4462-8ba7-28a0c8f19a62"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[TURN_IND_OVERRIDE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Internal">
+                    <OBJECT>
+                      <ID name="" mc="Standard.InternalTransition" uid="a90c5fcc-f20f-4b3c-8c45-4343b3b14ea7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[left = (TurnIndLvr == 1);
+right = (TurnIndLvr == 2);]]></ATT>
+                        <ATT name="ReceivedEvents"><![CDATA[Entry]]></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="" mc="Standard.InternalTransition" uid="8a6a6d17-15dd-4efc-ba5e-d98e19c3b75c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"><![CDATA[left = (TurnIndLvr == 1);
+right = (TurnIndLvr == 2);]]></ATT>
+                        <ATT name="ReceivedEvents"><![CDATA[Do]]></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="OutGoing">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Transition" uid="133a8546-ef6f-4f4b-9210-91446a7211b0"/>
+                      <ATTRIBUTES>
+                        <ATT name="Effect"></ATT>
+                        <ATT name="ReceivedEvents"></ATT>
+                        <ATT name="SentEvents"></ATT>
+                        <ATT name="Guard"><![CDATA[TurnIndLvr == 0]]></ATT>
+                        <ATT name="PostCondition"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="EMER_ACTIVE" mc="Standard.State" uid="c098096d-4daf-41a8-b205-9af819545441"/>
+                          </REFOBJ>
+                        </LINK>
+                        <COMP relation="DependsOnDependency">
+                          <OBJECT>
+                            <ID name="" mc="Standard.Abstraction" uid="86bd2376-2519-44d7-adbc-105c0d727224"/>
+                            <ATTRIBUTES>
+                              <ATT name="Mapping"></ATT>
+                              <ATT name="DependsOnId"></ATT>
+                              <ATT name="DependsOnName"></ATT>
+                              <ATT name="Name"></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES>
+                              <LINK relation="DependsOn">
+                                <ID name="REQ-007" mc="Standard.Requirement" uid="d7ddfef1-0444-4238-9034-daef92f0ad53"/>
+                              </LINK>
+                            </DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <COMP relation="Descriptor">
+                          <OBJECT>
+                            <ID name="" mc="Standard.Note" uid="61cc0671-4bf2-4e1e-a1d9-4c8a8569fc25"/>
+                            <ATTRIBUTES>
+                              <ATT name="Content"><![CDATA[Transition TURN_IND_OVERRIDE -> EMER_ACTIVE
+in state diagram EMER_ON]]></ATT>
+                              <ATT name="MimeType"></ATT>
+                              <ATT name="Name"></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES>
+                              <LINK relation="Model">
+                                <FOREIGNID name="comment" mc="Standard.NoteType" uid="00000000-0000-3e80-0000-000000000000"/>
+                              </LINK>
+                            </DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="RequirementRelated" mc="Standard.Stereotype" uid="55b2731f-a90d-11df-a01f-001302895b2b"/>
+                  </LINK>
+                  <COMP relation="DependsOnDependency">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Abstraction" uid="5140bd49-9523-4e8f-bf53-942117611ecf"/>
+                      <ATTRIBUTES>
+                        <ATT name="Mapping"></ATT>
+                        <ATT name="DependsOnId"></ATT>
+                        <ATT name="DependsOnName"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="DependsOn">
+                          <ID name="REQ-006" mc="Standard.Requirement" uid="996cd185-7e7b-4f5a-96b7-a61cac2787fe"/>
+                        </LINK>
+                        <LINK relation="Extension">
+                          <FOREIGNID name="satisfy" mc="Standard.Stereotype" uid="01ec12fc-0000-0224-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="EMER_ON State Machine diagram" mc="Standard.StateMachineDiagram" uid="02ee1b9d-e038-494c-910e-c68f3e13d9f0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
