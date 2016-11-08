@@ -8,4 +8,4 @@ The full-featured model is available
 [here](http://www.informatik.uni-bremen.de/agbs/testingbenchmarks/turn_indicator/index_e.html "Turn Indicator Model").
 
 The example can be opened using the [INTO-CPS application](https://github.com/into-cps/intocps-ui).
-As a starting point some test-procedures and LTL model checking queries have been pre-configured.
+In order to get started right-click on "Model-Checking" or "Test-Data-Generation" and choose to create a new project for the respective activity. Then specify a project name and the behavioral model in the following XMI file: SysML/turn_indication/XMI/rttesterexample.xmi.
