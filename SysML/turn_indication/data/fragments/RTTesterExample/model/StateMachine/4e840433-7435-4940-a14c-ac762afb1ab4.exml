@@ -20,9 +20,9 @@
           <DEPENDENCIES>
             <COMP relation="Sub">
               <OBJECT>
-                <ID name="Initial" mc="Standard.InitialPseudoState" uid="fd187d22-a7da-4cdf-890b-024c8f215585"/>
+                <ID name="Initial State" mc="Standard.InitialPseudoState" uid="fd187d22-a7da-4cdf-890b-024c8f215585"/>
                 <ATTRIBUTES>
-                  <ATT name="Name"><![CDATA[Initial]]></ATT>
+                  <ATT name="Name"><![CDATA[Initial State]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>

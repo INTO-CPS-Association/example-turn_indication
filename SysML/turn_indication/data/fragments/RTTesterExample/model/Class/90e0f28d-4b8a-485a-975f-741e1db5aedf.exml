@@ -505,58 +505,6 @@
             </LINK>
             <COMP relation="Part">
               <OBJECT>
-                <ID name="right" mc="Standard.Port" uid="ea093d03-7570-4e75-a1d4-0a01f53d0818"/>
-                <ATTRIBUTES>
-                  <ATT name="IsBehavior">false</ATT>
-                  <ATT name="IsService">true</ATT>
-                  <ATT name="IsConjugated">false</ATT>
-                  <ATT name="Direction">None</ATT>
-                  <ATT name="IsConstant">false</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="Value"></ATT>
-                  <ATT name="Name"><![CDATA[right]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="RepresentedFeature">
-                    <REFOBJ>
-                      <ID name="right" mc="Standard.Port" uid="f8138b7d-e79f-425e-893b-9bd200d5a3e2"/>
-                    </REFOBJ>
-                  </LINK>
-                  <COMP relation="OwnedEnd">
-                    <COMPID name="" mc="Standard.ConnectorEnd" uid="0ab96610-ddfa-437e-bb57-69c0bcb2fe1b"/>
-                  </COMP>
-                  <LINK relation="Base">
-                    <ID name="int" mc="Standard.DataType" uid="e87a8a1f-c1fa-4869-ad73-ed3b391e663c"/>
-                  </LINK>
-                  <COMP relation="Tag">
-                    <OBJECT>
-                      <ID name="" mc="Standard.TaggedValue" uid="172e5a20-9afa-40a5-ad30-0d750ef72497"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <COMP relation="Actual">
-                          <OBJECT>
-                            <ID name="" mc="Standard.TagParameter" uid="3a08d122-f744-42dd-87e6-bb5ec25ac3a1"/>
-                            <ATTRIBUTES>
-                              <ATT name="Value"><![CDATA[in]]></ATT>
-                              <ATT name="status">1970354901745664</ATT>
-                            </ATTRIBUTES>
-                            <DEPENDENCIES></DEPENDENCIES>
-                          </OBJECT>
-                        </COMP>
-                        <LINK relation="Definition">
-                          <FOREIGNID name="FlowPort_direction" mc="Standard.TagType" uid="00bc42a4-0000-1a5f-0000-000000000000"/>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
                 <ID name="left" mc="Standard.Port" uid="51f13aa7-c32c-4462-b0bb-37365f71e1ec"/>
                 <ATTRIBUTES>
                   <ATT name="IsBehavior">false</ATT>
@@ -593,6 +541,58 @@
                         <COMP relation="Actual">
                           <OBJECT>
                             <ID name="" mc="Standard.TagParameter" uid="0d4af927-eff4-4c9e-afe5-4372556172e2"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[in]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="FlowPort_direction" mc="Standard.TagType" uid="00bc42a4-0000-1a5f-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="right" mc="Standard.Port" uid="ea093d03-7570-4e75-a1d4-0a01f53d0818"/>
+                <ATTRIBUTES>
+                  <ATT name="IsBehavior">false</ATT>
+                  <ATT name="IsService">true</ATT>
+                  <ATT name="IsConjugated">false</ATT>
+                  <ATT name="Direction">None</ATT>
+                  <ATT name="IsConstant">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Value"></ATT>
+                  <ATT name="Name"><![CDATA[right]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="RepresentedFeature">
+                    <REFOBJ>
+                      <ID name="right" mc="Standard.Port" uid="f8138b7d-e79f-425e-893b-9bd200d5a3e2"/>
+                    </REFOBJ>
+                  </LINK>
+                  <COMP relation="OwnedEnd">
+                    <COMPID name="" mc="Standard.ConnectorEnd" uid="0ab96610-ddfa-437e-bb57-69c0bcb2fe1b"/>
+                  </COMP>
+                  <LINK relation="Base">
+                    <ID name="int" mc="Standard.DataType" uid="e87a8a1f-c1fa-4869-ad73-ed3b391e663c"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Standard.TaggedValue" uid="172e5a20-9afa-40a5-ad30-0d750ef72497"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Standard.TagParameter" uid="3a08d122-f744-42dd-87e6-bb5ec25ac3a1"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[in]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
